@@ -64,6 +64,10 @@ ifeq ($(BOARD_HAVE_SAMSUNG_BLUETOOTH),true)
     LOCAL_C_INCLUDES += hardware/samsung/macloader/include
 endif
 
+ifeq ($(BCM_BLUETOOTH_MANTA_BUG), true)
+    LOCAL_CFLAGS += -DMANTA_BUG
+endif
+
 include $(LOCAL_PATH)/vnd_buildcfg.mk
 
 include $(BUILD_SHARED_LIBRARY)
